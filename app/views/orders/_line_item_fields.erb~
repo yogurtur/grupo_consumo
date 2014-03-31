@@ -1,0 +1,16 @@
+<div class="fields">
+<p>
+<%= f.label :product, "Product" %>
+<%= f.collection_select :product_id, Product.all, :id, :name %>
+<%= f.label :quantity, "Quantity" %>
+<%= f.number_field :quantity %>
+
+<%= f.label :price, "Price" %>
+<%= echo :price %>
+
+<%= f.hidden_field :id %>
+<%= f.hidden_field :_destroy %>
+
+<%= link_to_function "remove", " remove_fields(this) " %>
+</p>
+</div>

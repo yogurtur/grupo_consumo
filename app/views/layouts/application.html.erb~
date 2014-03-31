@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GrupoConsumo</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="content">
+<ul>
+  <li><a href="/orders">Orders</a></li>
+  <li><a href="/products">Products</a></li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>
