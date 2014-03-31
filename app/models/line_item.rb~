@@ -3,7 +3,7 @@ class LineItem < ActiveRecord::Base
   belongs_to :order
   
     def line_item_price
-    total = quantity * product.price
+    total = number_to_currency(quantity * product.price)
     end
 
 end

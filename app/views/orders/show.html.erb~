@@ -32,6 +32,11 @@
 
 <p>Products</p>
 <table>
+<tr>
+  <td>Name</td>
+  <td>Quantity</td>
+  <td>Price</td>
+</tr>
 <% @order.line_items.each do |l| %>
 <tr>
   <td><%= l.product.name %></td>

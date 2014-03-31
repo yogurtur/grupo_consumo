@@ -1,0 +1,7 @@
+<% @order.line_items.each do |l| %>
+<tr>
+  <td><%= l.product.name %></td>
+  <td><%= l.quantity %></td>
+  <td><%= number_to_currency(l.line_item_price) %></td>
+</tr>
+<% end %>
