@@ -8,6 +8,7 @@ gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+gem 'bootstrap-sass', '2.3.2.0'
 
 gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
