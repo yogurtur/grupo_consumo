@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :product_category %><br>
-    <%= f.select :product_category, Product::CATEGORY, prompt: 'Select Category' %>
+    <%= f.text_field :product_category %>
   </div>
   <div class="actions">
     <%= f.submit %>

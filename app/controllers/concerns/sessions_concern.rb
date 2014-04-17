@@ -1,4 +1,5 @@
-module SessionsHelper
+module SessionsConcern
+  extend ActiveSupport::Concern
 
   def sign_in(user)
     remember_token = User.new_remember_token
@@ -24,6 +25,12 @@ module SessionsHelper
     current_user.update_attribute(:remember_token, User.hash(User.new_remember_token))
     cookies.delete(:remember_token)
     self.current_user = nil
+  end
+  
+  def not_need_authenticate
+  if current_user
+  redirect_to root_url, notice: 'You are already logged'
+  end
   end
   
 end

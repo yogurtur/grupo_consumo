@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update]
+  before_action :not_need_authenticate, only: [:new]
 
   def show
     @user = User.find(params[:id])

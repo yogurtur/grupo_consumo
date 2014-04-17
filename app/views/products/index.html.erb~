@@ -1,5 +1,5 @@
-<%= render 'filter' %>
 <h1>Listing products</h1>
+<%= render 'filter' %>
 <table>
   <thead>
     <tr>

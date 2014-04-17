@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+  before_action :not_need_authenticate, only: [:new]
+  
   def new
   end
 

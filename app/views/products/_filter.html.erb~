@@ -1,0 +1,42 @@
+<table>
+     <%= form_tag products_path, {:method => 'get'} do |f| %>
+        <tr>
+        <td>
+           <%= label_tag(:category) %>
+           <%= select_tag :by_category,options_for_select(Product::CATEGORY.map { |c| [t("#{c}"), c] }) %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+           <%= label_tag(:quantity) %>
+           <%= number_field_tag :by_quantity, params[:by_quantity] %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+           <%= label_tag(:admission_at) %>
+           <%= date_field_tag :by_admission_at, params[:by_admission_at] %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+           <%= label_tag(:manufacturer) %>
+           <%= text_field_tag :by_manufacturer, params[:by_manufacturer] %>
+        </td>
+        </tr>
+        <tr>
+        <td>
+           <%= label_tag(:minimun_price) %>
+           <%= number_field_tag :by_minimun_price, params[:by_minimun_price] %>
+           <%= label_tag(:maximum_price) %>
+           <%= number_field_tag :by_maximum_price, params[:by_maximum_price] %>
+        </td>
+        </tr>
+        <tr>
+        <td colspan="2">
+         <%= submit_tag "Filter" %>
+        </td>
+        </tr>
+        <% end %>
+     </form>
+</table>

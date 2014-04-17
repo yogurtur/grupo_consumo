@@ -6,6 +6,9 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    filtering_params(params).each do |key, value|
+    @products = @products.public_send(key, value) if value.present?
+    end
   end
 
   # GET /products/1
@@ -72,4 +75,10 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :admission_at, :manufacturer, :quantity, :price, :product_category)
     end
+    
+    # A list of the param names that can be used for filtering the Product list
+    def filtering_params(params)
+      params.slice(:by_admission_at, :by_manufacturer, :by_quantity, :by_category, :by_minimum_price, :by_maximum_price)
+    end
+    
 end
