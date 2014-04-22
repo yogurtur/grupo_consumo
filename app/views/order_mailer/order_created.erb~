@@ -1,0 +1,41 @@
+<h1><%= t("email.email_text") %></h1>
+
+<p>
+  <%= t("orders.order_status") %>
+  <%= @order.order_status %>
+</p>
+
+<p>
+  <%= t("orders.payment_method") %>
+</p>
+
+<p>
+  <%= t("orders.shipping_address") %>
+  <%= @order.shipping_address %>
+</p>
+
+<p>
+  <%= t("orders.shipping_city") %>
+  <%= @order.shipping_city %>
+</p>
+
+<p>
+  <%= t("orders.customer_name") %>
+  <%= @order.customer_name %>
+</p>
+
+<p>
+  <%= t("orders.customer_lastname") %>
+  <%= @order.customer_lastname %>
+</p>
+
+<h1><%= t("products.listing_products") %></h1>
+
+<table>
+<tr>
+  <td><%= t("products.listing_products") %></td>
+  <td>Quantity</td>
+  <td>Price</td>
+</tr>
+<%= render @order.line_items %>
+</table>

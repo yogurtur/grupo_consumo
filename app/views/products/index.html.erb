@@ -1,15 +1,15 @@
 <%= render 'filter' %>
-<h1>Listing products</h1>
+<h1><%= t("products.listing_products") %></h1>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Admission at</th>
-      <th>Manufacturer</th>
-      <th>Quantity</th>
-      <th>Price</th>
-      <th>Product category</th>
+      <th><%= t("products.name") %></th>
+      <th><%= t("products.descripcion") %></th>
+      <th><%= t("products.admission_at") %></th>
+      <th><%= t("products.manufacturer") %></th>
+      <th><%= t("products.quantity") %></th>
+      <th><%= t("products.price") %></th>
+      <th><%= t("products.product_category") %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -26,9 +26,9 @@
         <td><%= product.quantity %></td>
         <td><%= product.price %></td>
         <td><%= product.product_category %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t("interface.show"), product_path(id: product.id) %></td>
+        <td><%= link_to t("interface.edit"), edit_product_path(id: product.id) %></td>
+        <td><%= link_to t("interface.destroy"), product_path(id: product.id), method: :delete, data: { confirm: t("interface.confirm") } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to t("products.new_product"), new_product_path %>

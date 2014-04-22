@@ -1,16 +1,22 @@
 GrupoConsumo::Application.routes.draw do
-  root 'orders#index'
-  resources :orders
-  resources :products
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+
+   scope "/:locale" do
+   root 'orders#index'
+   resources :orders
+   resources :products
+   resources :users
+   resources :sessions, only: [:new, :create, :destroy]
 #  match '/signup',  to: 'users#new', via: 'get'
 #  match '/signin', to: 'sessions#new', via: 'get' 
 #  match '/signout', to: 'sessions#destroy', via: :delete
-  get '/signup', to: 'users#new'
-  get '/signin', to: 'sessions#new'
-  delete '/signout', to: 'sessions#destroy' 
+   get '/signup', to: 'users#new'
+   get '/signin', to: 'sessions#new'
+   delete '/signout', to: 'sessions#destroy'
+  end 
 
+  get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  get '/', to: 'orders#index'
+  get '', to: redirect("/")
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

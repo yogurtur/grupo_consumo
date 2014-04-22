@@ -5,3 +5,10 @@
   <td><%= number_to_currency(l.line_item_price) %></td>
 </tr>
 <% end %>
+<tr>
+  <td colspan=2>
+  Total
+  </td>
+  <td><%= number_to_currency(@order.line_items.sum {|l| l.line_item_price * l.quantity})%>
+  </td>
+</tr>

@@ -18,9 +18,9 @@ GrupoConsumo::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address => "mail.domain.com",
+  :address => "mail.innova-magazine.com",
   :port => 25,
-  :user_name => "abels@domain.com",
+  :user_name => "abels@innova-magazine.com",
   :password => "passwrd",
   :autentication => "plain",
   :enable_starttls_auto => true,

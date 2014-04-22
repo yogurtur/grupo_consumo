@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     filtering_params(params).each do |key, value|
     @products = @products.public_send(key, value) if value.present?
+    end
   end
 
   # GET /products/1

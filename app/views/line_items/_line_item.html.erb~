@@ -2,6 +2,13 @@
 <tr>
   <td><%= l.product.name %></td>
   <td><%= l.quantity %></td>
-  <td><%= l.line_item_price %></td>
+  <td><%= number_to_currency(l.line_item_price) %></td>
 </tr>
 <% end %>
+<tr>
+  <td colspan=2>
+  Total
+  </td>
+  <td><%= @order.line_items.sum {|l| l.line_item_price * l.quantity}%>
+  </td>
+</tr>

@@ -30,22 +30,18 @@
   <%= @order.customer_lastname %>
 </p>
 
-<p>Products</p>
+<p><b><%= t("products.listing_products") %></b></p>
 <table>
 <tr>
   <td>Name</td>
   <td>Quantity</td>
   <td>Price</td>
 </tr>
-<% @order.line_items.each do |l| %>
-<tr>
-  <td><%= l.product.name %></td>
-  <td><%= l.quantity %></td>
-  <td><%= l.quantity * l.product.price %></td>
-</tr>
-<% end %>
+
+<%= render @order.line_items %>
+
 </table>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Edit', edit_order_path(id: @order.id) %> |
 <%= link_to 'Back', orders_path %>
 

@@ -35,5 +35,5 @@
   <%= @product.product_category %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(id: @product.id) %> |
+<%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

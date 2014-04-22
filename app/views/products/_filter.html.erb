@@ -2,39 +2,39 @@
      <%= form_tag products_path, {:method => 'get'} do |f| %>
         <tr>
         <td>
-           <%= label_tag(:category) %>
+           <%= t("products.product_category") %>
            <%= select_tag :by_category,options_for_select(Product::CATEGORY.map { |c| [t("#{c}"), c] }) %>
         </td>
         </tr>
         <tr>
         <td>
-           <%= label_tag(:quantity) %>
+           <%= t("products.quantity") %>
            <%= number_field_tag :by_quantity, params[:by_quantity] %>
         </td>
         </tr>
         <tr>
         <td>
-           <%= label_tag(:admission_at) %>
+           <%= t("products.admission_at") %>
            <%= date_field_tag :by_admission_at, params[:by_admission_at] %>
         </td>
         </tr>
         <tr>
         <td>
-           <%= label_tag(:manufacturer) %>
+           <%= t("products.manufacturer") %>
            <%= text_field_tag :by_manufacturer, params[:by_manufacturer] %>
         </td>
         </tr>
         <tr>
         <td>
-           <%= label_tag(:minimum_price) %>
+           <%= t("products.minimum_price") %>
            <%= number_field_tag :by_minimum_price, params[:by_minimum_price] %>
-           <%= label_tag(:maximum_price) %>
+           <%= t("products.maximum_price") %>
            <%= number_field_tag :by_maximum_price, params[:by_maximum_price] %>
         </td>
         </tr>
         <tr>
         <td colspan="2">
-         <%= submit_tag "Filter" %>
+         <%= submit_tag t("products.filter") %>
         </td>
         </tr>
         <% end %>

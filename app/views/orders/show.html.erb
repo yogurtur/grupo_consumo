@@ -1,36 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Order status:</strong>
+  <strong><%= t("orders.order_status") %></strong>
   <%= @order.order_status %>
 </p>
 
 <p>
-  <strong>Payment method:</strong>
+  <strong><%= t("orders.payment_method") %></strong>
   <%= @order.payment_method %>
 </p>
 
 <p>
-  <strong>Shipping address:</strong>
+  <strong><%= t("orders.shipping_address") %></strong>
   <%= @order.shipping_address %>
 </p>
 
 <p>
-  <strong>Shipping city:</strong>
+  <strong><%= t("orders.shipping_city") %></strong>
   <%= @order.shipping_city %>
 </p>
 
 <p>
-  <strong>Customer name:</strong>
+  <strong><%= t("orders.customer_name") %></strong>
   <%= @order.customer_name %>
 </p>
 
 <p>
-  <strong>Customer lastname:</strong>
+  <strong><%= t("orders.customer_lastname") %></strong>
   <%= @order.customer_lastname %>
 </p>
 
-<p>Products</p>
+<p><b><%= t("products.listing_products") %></b></p>
 <table>
 <tr>
   <td>Name</td>
@@ -42,6 +42,6 @@
 
 </table>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Edit', edit_order_path(id: @order.id) %> |
 <%= link_to 'Back', orders_path %>
 

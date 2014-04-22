@@ -1,0 +1,25 @@
+An order has been created
+
+Texto traducible
+
+  State
+  <%= @order.state %>
+
+  Payment
+  <%= @order.payment %>
+
+  Address
+  <%= @order.address %>
+
+  City
+  <%= @order.city %>
+
+  Name
+  <%= @order.name %>
+
+  Surname
+  <%= @order.surname %>
+
+Products
+
+

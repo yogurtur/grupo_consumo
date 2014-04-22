@@ -26,7 +26,7 @@
         <td><%= order.customer_lastname %></td>
         <td><%= link_to t("interface.show"), order_path(id: order.id) %></td>
         <td><%= link_to t("interface.edit"), edit_order_path(id: order.id) %></td>
-        <td><%= link_to t("interface.destroy"), order_path(id: order.id), method: :delete, data: { confirm: t("interface.confirm") } %></td>
+        <td><%= link_to t("interface.destroy"), order_path(id: order.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
