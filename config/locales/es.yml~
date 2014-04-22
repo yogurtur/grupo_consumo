@@ -242,4 +242,7 @@ es:
     
   email:
     email_text: Este es un correo electrónico enviado automáticamente ...
+    subject: Hemos recibido un pedido
     
+  warnings:
+    wrong_email_address: Direccion de correo inválida
