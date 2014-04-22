@@ -14,7 +14,7 @@ GrupoConsumo::Application.routes.draw do
    delete '/signout', to: 'sessions#destroy'
   end 
 
-  get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+
   get '/', to: 'orders#index'
   get '', to: redirect("/")
 

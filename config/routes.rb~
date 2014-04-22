@@ -1,5 +1,5 @@
 GrupoConsumo::Application.routes.draw do
-get '/:locale' => 'orders#index'
+
    scope "/:locale" do
    root 'orders#index'
    resources :orders
